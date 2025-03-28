@@ -19,7 +19,6 @@ class FieldDataProcessor():
             df.rename(columns= {'Crop_type_temp':'Crop_type'} , inplace=True)
             df['Crop_type'] = df['Crop_type'].replace(self.config_params['values_to_rename'])
             df['Crop_type'] = df['Crop_type'].apply(lambda x: x.strip())
-            df.drop(columns={'Min_temperature_C','Max_temperature_C','Plot_size','Annual_yield','Latitude','Longitude'},inplace=True)
             self.df = df
             return self.df
             
